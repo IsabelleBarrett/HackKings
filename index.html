@@ -5,14 +5,74 @@
 <meta charset="UTF-8">
 
 <style>
-	.btn {
-		vertical-align: centre
+	.callButtonWrapper {
+		width: 100%;
+		height: auto;
+		bottom: 0px;
+		top: 0;
+		left: 0;
+		position: absolute;
 	}
+
+	#callButtonWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.start {
+		position: fixed;
+		width: 100px;
+	}
+
+	.visualisation {
+		height: 70%;
+		width: 100%;
+		background-color: lightgrey;
+		display: none;
+	}
+
+	#endCallButtonWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.end {
+		position: fixed;
+		width: 100px;
+		display: none;
+		margin-top: 100px;
+	}
+
 </style>
 
 <body>
-	<div>
-		<input type="image" src="callButton.png" name="Call" class="btn" id="call" />
+	<div class="callButtonWrapper" id="callButtonWrapper">
+		<input type="image" src="callButton.png" name="startCall" class="start" id="startCall" onclick="makeCall()"/>
 	</div>
+	
+	<div>
+		<div class="visualisation" id="soundVisual">
+		This is where the sound visualisation will go once I have actual data to visualise
+		</div>
+
+		<div class="endCallButtonWrapper" id="endCallButtonWrapper">
+			<input type="image" src="endCallButton.png" name="endCall" class="end" id="endCall" onclick="endCall()">
+		</div>
+	</div>
+
+	<script>
+		function makeCall() {
+			console.log("Hey Aaron, you need to tell the button to do something")
+			document.getElementById("startCall").style.display="none";
+			document.getElementById("soundVisual").style.display="block";
+			document.getElementById("endCall").style.display="block";
+		}
+
+		function endCall() {
+			console.log("This is where the call ends and goes back to the home screen")
+		}
+	</script>
 </body>
 </html>
